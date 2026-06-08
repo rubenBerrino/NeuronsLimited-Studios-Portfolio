@@ -207,4 +207,30 @@ footer {
         margin-left: 0;
         font-size: 0.85rem;
     }
+
+    footer {
+    text-align: center;
+    padding: 2rem;
+    }
+
+    .legal-links {
+        margin-top: 10px;
+        font-size: 0.85rem;
+    }
+
+    .legal-links a {
+        color: #888;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .legal-links a:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    .legal-links .separator {
+        color: #888;
+        margin: 0 10px;
+    }
 }
