@@ -252,4 +252,25 @@ footer {
         color: #888;
         margin: 0 10px;
     }
+
+    .project-card, 
+    .project-card.reversed {
+        flex-direction: column-reverse;
+    }
+
+    .project-image.portrait {
+        flex: initial;
+        width: 100%;
+        height: 220px;
+    }
+
+    .project-image {
+        width: 100%;
+        height: 220px;
+        min-height: auto;
+    }
+
+    .project-content {
+        padding: 25px;
+    }
 }
