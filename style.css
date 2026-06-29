@@ -151,8 +151,14 @@ nav {
     margin-bottom: 15px;
 }
 
-.discontinued { background: #442222; color: #ff6b6b; }
-.in-development { background: #224422; color: #6bff6b; }
+.discontinued {
+    background: #224422;
+    color: #6bff6b;
+}
+.in-development {
+    background: #f58142;
+    color: #fcddcc;
+}
 
 .features span {
     display: inline-block;
