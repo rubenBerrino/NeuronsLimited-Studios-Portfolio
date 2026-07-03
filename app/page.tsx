@@ -1,0 +1,34 @@
+import Hero from "@/components/Hero";
+import ProjectCard from "@/components/ProjectCard";
+
+export default function HomePage() {
+  return (
+    <>
+      <Hero />
+
+      <section id="projects">
+        <ProjectCard
+          title="Shrimps"
+          description="A fast-paced 2D multiplayer game where you control a heavily armed shrimp. Collect weapons spawning across the map, shoot opponents, and fight to survive. When unarmed, use a push mechanic to deflect bullets and shove enemies away. Every shrimp features unique abilities like a double jump, dash, or teleport. The last survivor wins the round before switching maps. Watch out for the water! Coming soon to Google Play."
+          statusLabel="In Development"
+          statusType="in-development"
+          features={["Multiplayer", "Action 2D", "Unique Abilities"]}
+          image="/assets/shrimps.jpg"
+          imageAlt="Shrimps gameplay screenshot"
+          reversed
+        />
+
+        <ProjectCard
+          title="Elite Safety"
+          description="A mobile space tycoon developed using the Unity platform. Players build an empire by buying and mining asteroids and planets, each featuring unique minerals with randomized purity. Earnings are calculated dynamically based on mineral types, mine and refinery counts, and vital safety ratings. Safety is a core mechanic influenced by upgrades like protective helmets, safety alarms, oxygen tanks, and safety training. An updated was being worked on but was put aside to work on our next big game. Elite Safety is available to be downloaded on the Google Play Store."
+          statusLabel="Released on Google Play"
+          statusType="discontinued"
+          features={["Management", "Mobile", "Space Tycoon"]}
+          image="/assets/elitesafety.jpg"
+          imageAlt="Elite Safety game screenshot"
+          portrait
+        />
+      </section>
+    </>
+  );
+}
