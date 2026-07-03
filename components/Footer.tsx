@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="legal-links">
           <Link href="/policy">Privacy &amp; Cookie Policy</Link>
           <span className="separator">|</span>
-          <Link href="/policy">Terms of Service</Link>
+          <Link href="/terms">Terms of Service</Link>
         </div>
       )}
     </footer>
