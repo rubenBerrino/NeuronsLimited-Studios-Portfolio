@@ -172,6 +172,23 @@ nav {
   line-height: 1.7;
 }
 
+.download-button {
+  display: inline-block;
+  margin-top: 20px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.download-button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.download-button img {
+  height: 280px;
+  width: auto;
+  display: block;
+}
+
 .project-image {
   flex: 1;
   background: #252525;

@@ -19,6 +19,12 @@ interface ProjectCardProps {
   portrait?: boolean;
   /** Whether the layout is reversed (image on left, text on right) */
   reversed?: boolean;
+  /** Optional download button image path (e.g. Google Play badge) */
+  downloadButtonImage?: string;
+  /** URL the download button links to */
+  downloadButtonLink?: string;
+  /** Alt text for the download button image */
+  downloadButtonAlt?: string;
 }
 
 export default function ProjectCard({
@@ -31,6 +37,9 @@ export default function ProjectCard({
   imageAlt,
   portrait = false,
   reversed = false,
+  downloadButtonImage,
+  downloadButtonLink,
+  downloadButtonAlt = "Download on Google Play",
 }: ProjectCardProps) {
   return (
     <RevealWrapper>
@@ -44,6 +53,19 @@ export default function ProjectCard({
               <span key={feature}>{feature}</span>
             ))}
           </div>
+          {downloadButtonImage && downloadButtonLink && (
+            <a
+              href={downloadButtonLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="download-button"
+            >
+              <img
+                src={downloadButtonImage}
+                alt={downloadButtonAlt}
+              />
+            </a>
+          )}
         </div>
         <div className={`project-image${portrait ? " portrait" : ""}`}>
           <img src={image} alt={imageAlt} />
