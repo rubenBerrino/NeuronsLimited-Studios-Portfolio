@@ -40,6 +40,21 @@ export default function Header() {
                 YouTube
               </a>
               <a
+                href="https://www.instagram.com/neuronslimitedstudios"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link-item"
+              >
+                <img
+                  src="/assets/Instagram.svg"
+                  alt="Instagram"
+                  width={16}
+                  height={16}
+                  className="social-icon"
+                />
+                Instagram
+              </a>
+              <a
                 href="https://discord.gg/B9P6v8KmRM"
                 target="_blank"
                 rel="noopener noreferrer"
