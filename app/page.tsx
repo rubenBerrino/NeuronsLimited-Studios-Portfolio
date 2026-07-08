@@ -16,6 +16,7 @@ export default function HomePage() {
           image="/assets/shrimps.jpg"
           imageAlt="Shrimps gameplay screenshot"
           reversed
+          contentHoverImage="/assets/Placeholder-shrimps.png"
         />
 
         <ProjectCard
@@ -27,6 +28,7 @@ export default function HomePage() {
           image="/assets/elitesafety.jpg"
           imageAlt="Elite Safety game screenshot"
           portrait
+          contentHoverImage="/assets/Placeholder-elitesafety.png"
           downloadButtonImage="/assets/googleplaydownloadbutton.png"
           downloadButtonLink="https://play.google.com/store/apps/details?id=com.NeuronsLimitedStudios.EliteSafety"
           downloadButtonAlt="Get it on Google Play"

@@ -1,3 +1,5 @@
+"use client";
+import { useRef } from "react";
 import RevealWrapper from "./RevealWrapper";
 
 interface ProjectCardProps {
@@ -25,6 +27,8 @@ interface ProjectCardProps {
   downloadButtonLink?: string;
   /** Alt text for the download button image */
   downloadButtonAlt?: string;
+
+  contentHoverImage?: string;
 }
 
 export default function ProjectCard({
@@ -40,11 +44,52 @@ export default function ProjectCard({
   downloadButtonImage,
   downloadButtonLink,
   downloadButtonAlt = "Download on Google Play",
+  contentHoverImage,
 }: ProjectCardProps) {
+  const bgRef = useRef<HTMLDivElement>(null);
+  const strength = 15;
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const bg = bgRef.current;
+    if (!bg) return;
+
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+
+    const mx = (x - 0.5) * strength * -1;
+    const my = (y - 0.5) * strength * -1;
+
+    bg.style.setProperty("--mx", `${mx}px`);
+    bg.style.setProperty("--my", `${my}px`);
+  };
+
+  const handleMouseLeave = () => {
+    const bg = bgRef.current;
+    if (!bg) return;
+
+    bg.style.setProperty("--mx", "0px");
+    bg.style.setProperty("--my", "0px");
+  };
+
   return (
     <RevealWrapper>
       <div className={`project-card${reversed ? " reversed" : ""}`}>
-        <div className="project-content">
+        <div
+          className={`project-content${
+            contentHoverImage ? " hover-reveal" : ""
+          }`}
+          onMouseMove={contentHoverImage ? handleMouseMove : undefined}
+          onMouseLeave={contentHoverImage ? handleMouseLeave : undefined}
+        >
+          {contentHoverImage && (
+            <div
+              ref={bgRef}
+              className="project-content-bg"
+              style={{ backgroundImage: `url(${contentHoverImage})` }}
+              aria-hidden="true"
+            />
+          )}
           <div className={`status-tag ${statusType}`}>{statusLabel}</div>
           <h2>{title}</h2>
           <p className="description">{description}</p>
