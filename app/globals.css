@@ -172,6 +172,10 @@ nav {
   line-height: 1.7;
 }
 
+.project-content.hover-reveal:hover .description {
+  color: #d0d0d0;
+}
+
 .project-content.hover-reveal {
   position: relative;
   z-index: 0;
