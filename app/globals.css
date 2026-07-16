@@ -273,9 +273,8 @@ nav {
 }
 
 .in-development {
-  background: #f58142;
-  color: #fcddcc;
-  animation: pulse-tag 2.5s ease-in-out infinite;
+  background: #224422;
+  color: #6bff6b;
 }
 
 @keyframes pulse-tag {
